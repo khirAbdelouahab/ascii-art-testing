@@ -1,19 +1,16 @@
 package Data
-
 import(
 	"os"
 	"log"
 	"bufio"
 )
 // this function return the All Charachters From File
-
 func LoadDataFromFile(fileName string)[95][8]string {
 		file, err := os.Open(fileName)
 		if err != nil {
 			log.Fatal(err)
 		}
 		defer file.Close()
-	
 		scanner := bufio.NewScanner(file)
 		var array [95][8]string
 		for row := 1 ; row <= 95 ; row++ {
