@@ -7,8 +7,11 @@ func PrintCharachters(s, FromFile string) { // "\nHello\n\nworld" // "\n\n\n"   
 			indexChar := FindCharacterId(rune(s[activeIndex]))
 			PrintCharLine(Charachters,indexChar,line-1)
 			activeIndex++;
-			if activeIndex == size_s  && line < 8 {
-				activeIndex = startIndex ; line++ ; fmt.Println()
+			if activeIndex == size_s  {
+				if line < 8 {
+					line++ ; activeIndex = startIndex
+				}
+				fmt.Println()
 			}
 		} else {
 			if startIndex == activeIndex || line == 8 {
